@@ -17,18 +17,17 @@
 	</ul>
 
 
-
+	<Footer></Footer>
 </template>
 
 <script >
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
-import Home from "./components/Home.vue";
-import Music from "./components/Music.vue";
 
 export default {
 	components: {
-		Header
+		Header,
+		Footer
 	}
 }
 
