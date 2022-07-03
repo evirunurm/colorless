@@ -2,25 +2,39 @@
 	<header>
 		<div class="container">
 			<nav>
-				<button @click="navOpened = !navOpened; animateBurger(); toggleScroll();"
+				<button @click="navOpened = !navOpened"
 						  class="nav__burger-container mobile-nav">
 					<img ref="burger" class="nav__burger" src="../assets/burger_menu.svg" alt="Menu Button">
 				</button>
 				<section class="nav--opened mobile-nav" v-if="navOpened">
 					<div class="nav--opened__background"/>
-					<router-link class="font-colorless section-title" to="/">Home</router-link>
-					<router-link class="font-colorless section-title" to="/music">Music</router-link>
-					<router-link class="font-colorless section-title" to="/lore">Lore</router-link>
-					<router-link class="font-colorless section-title" to="/contact">Contact</router-link>
+					<router-link @click="navOpened = false" class="font-colorless section-title" to="/">Home</router-link>
+					<router-link @click="navOpened = false" class="font-colorless section-title" to="/music">Music
+					</router-link>
+					<router-link @click="navOpened = false" class="font-colorless section-title" to="/lore">Lore
+					</router-link>
+					<router-link @click="navOpened = false" class="font-colorless section-title" to="/contact">Contact
+					</router-link>
 				</section>
-				<div class="desktop-nav">
-					<router-link class="font-colorless section-title" to="/">Home</router-link>
-					<router-link class="font-colorless section-title" to="/music">Music</router-link>
+				<div class="desktop-nav-container">
+					<router-link class="desktop-nav font-colorless section-title"
+									 :class="selectedSection === 'home' ? 'section--selected' : 'section'" id="home" to="/">Home
+					</router-link>
+					<router-link class="desktop-nav font-colorless section-title"
+									 :class="selectedSection === 'music' ? 'section--selected' : 'section'" id="music"
+									 to="/music">Music
+					</router-link>
 					<div class="logo">
 						<img src="../assets/logo.svg" alt="Simple white Banshee logo">
 					</div>
-					<router-link class="font-colorless section-title" to="/lore">Lore</router-link>
-					<router-link class="font-colorless section-title" to="/contact">Contact</router-link>
+					<router-link class="desktop-nav font-colorless section-title"
+									 :class="selectedSection === 'lore' ? 'section--selected' : 'section'" id="lore" to="/lore">
+						Lore
+					</router-link>
+					<router-link class="desktop-nav font-colorless section-title"
+									 :class="selectedSection === 'contact' ? 'section--selected' : 'section'" id="contact"
+									 to="/contact">Contact
+					</router-link>
 				</div>
 			</nav>
 
@@ -31,9 +45,6 @@
 				</div>
 				<div class="social-media__icon">
 					<a target="_blank" href=""><img src="../assets/social-media/audius.svg" alt="Audius Link"></a>
-				</div>
-				<div class="social-media__icon">
-					<a target="_blank" href=""><img src="../assets/social-media/soundcloud.svg" alt="Audius Link"></a>
 				</div>
 				<div class="social-media__icon">
 					<a target="_blank" href="https://www.youtube.com/channel/UCr3f_Nm2NO8i_1pBMAdd3YQ"><img
@@ -59,6 +70,7 @@ export default {
 	data() {
 		return {
 			navOpened: false,
+			selectedSection: "home"
 		}
 	},
 	methods: {
@@ -71,14 +83,37 @@ export default {
 				this.$refs.burger.classList.add("rotate-90");
 			}
 		},
-		toggleScroll() {
+		updateScroll() {
 			if (this.navOpened) {
-				this.$emit("blockScroll");
+				document.getElementsByTagName("body")[0].parentNode.style.overflowY = "hidden";
 			} else {
-				this.$emit("unblockScroll");
+				document.getElementsByTagName("body")[0].parentNode.style.overflowY = "scroll";
+			}
+		},
+		onResize(e) {
+			if (e.target.innerWidth > 800) {
+				this.navOpened = false;
 			}
 		}
 	},
+	watch: {
+		$route(to, from) {
+			this.selectedSection = to.name;
+		},
+		navOpened() {
+			this.updateScroll();
+			this.animateBurger();
+		}
+	},
+	mounted() {
+		this.$nextTick(() => {
+			window.addEventListener('resize', this.onResize);
+		})
+	},
+	beforeDestroy() {
+		window.removeEventListener('resize', this.onResize);
+	}
+
 }
 </script>
 
@@ -114,20 +149,6 @@ header {
 	color: var(--white);
 	z-index: 20;
 	cursor: pointer;
-}
-
-.selection-container {
-	position: relative;
-}
-
-.section__selector {
-	position: absolute;
-	top: 0.75em;
-	left: -1.25em;
-	width: 0.5em;
-	height: 0.5em;
-	background-color: var(--white);
-	border-radius: 50%;
 }
 
 .selection-container a:hover {
@@ -168,45 +189,37 @@ nav {
 	min-height: 9em;
 }
 
-.desktop-nav {
+.desktop-nav-container {
 	display: flex;
 	width: 100%;
 	justify-content: space-around;
 	align-items: center;
 }
 
-.desktop-nav__links {
-	display: none;
-	width: 100%;
-	justify-content: space-around;
-	align-items: center;
-}
-
-.desktop-nav__link {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 10em;
-	position: relative;
-}
-
-.desktop-nav a {
+.desktop-nav-container a {
 	color: var(--white);
 	text-decoration: none;
 	margin: 0 1.25em 0 1.25em;
 	cursor: pointer;
-	font-size: 1.25em;
 }
 
-.section__selector--desktop {
+.desktop-nav {
+	display: none;
+}
+
+/* DESKTOP NAV SELECTOR */
+
+.section--selected {
+	position: relative;
+}
+
+.section--selected:after {
+	content: "x";
+	font-size: 1.25rem;
 	position: absolute;
-	bottom: -75%;
+	top: 100%;
 	left: 50%;
-	transform: translate(-50%);
-	width: 0.5em;
-	height: 0.5em;
-	background-color: var(--white);
-	border-radius: 50%;
+	transform: translateX(-50%);
 }
 
 /* ****** */
@@ -227,7 +240,6 @@ nav {
 	align-items: center;
 	justify-content: center;
 	margin: 0.75em 0 0.75em 0;
-	position: absolute;
 }
 
 .logo img {
@@ -247,9 +259,14 @@ nav {
 }
 
 .section-title {
-	font-size: 2.5rem;
+	font-size: 2.25rem;
 }
 
+/* Mobile nav links */
+
+.mobile-nav > a {
+	font-size: 2.75rem;
+}
 
 /* ********* */
 /* ANIMATION */
@@ -288,7 +305,7 @@ nav {
 		display: none;
 	}
 
-	.desktop-nav__links {
+	.desktop-nav {
 		display: flex;
 	}
 

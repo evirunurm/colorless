@@ -50,7 +50,13 @@
 </template>
 
 <script>
+import SquareImage from "../components/SquareImage.vue";
 
+export default {
+	components: {
+		SquareImage
+	}
+}
 
 </script>
 

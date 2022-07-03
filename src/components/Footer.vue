@@ -1,6 +1,6 @@
 <template>
 	<footer>
-		<h3><a class="font-kontanter back-to-top" @click="scrollToTop">BACK TO THE TOP</a></h3>
+		<h3><a class="font-colorless back-to-top" @click="scrollToTop">BACK TO THE TOP</a></h3>
 		<hr/>
 		<p class="credits">Developed by <a href="https://github.com/evirunurm" target="_blank" class="credits__link">Evelin
 			Virunurm</a></p>
@@ -25,7 +25,7 @@ footer {
 	align-items: center;
 	justify-content: center;
 	gap: 1em;
-	padding: 0 var(--general-margin) calc(var(--general-margin) / 3) var(--general-margin);
+	margin: 2.5rem var(--general-margin) 2rem var(--general-margin);
 }
 
 a {
@@ -35,28 +35,35 @@ a {
 
 hr {
 	width: 100%;
-	opacity: 25%;
+	opacity: 35%;
 }
 
 .credits {
 	margin: calc(var(--general-margin) / 4) 0 calc(var(--general-margin) / 4) 0;
 	font-size: 0.75em;
 	align-self: flex-end;
-	color: rgba(255, 255, 255, 0.25);
+	color: rgba(255, 255, 255, 0.50);
 }
 
-.credits__link {
-	opacity: 0.5;
+.credits__link:hover {
+	text-decoration: underline;
 }
 
 .back-to-top {
-	font-size: 2.25rem;
+	font-size: 2rem;
 	font-weight: normal;
+	cursor: pointer;
 }
 
 @media (min-width: 700px) {
 	.credits {
 		font-size: 1em;
 	}
+
+	.back-to-top {
+	font-size: 2.25rem;
+
+}
+
 }
 </style>
