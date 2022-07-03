@@ -1,5 +1,3 @@
-
-
 <template>
 	<Header></Header>
 	<main>
@@ -9,14 +7,6 @@
 	  		</transition>
   		</router-view>
 	</main>
-
-	<ul>
-		<router-link to="/">Home</router-link>
-		<router-link to="/music">Music</router-link>
-		<router-link to="/lore">Lore</router-link>
-	</ul>
-
-
 	<Footer></Footer>
 </template>
 
