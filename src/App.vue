@@ -47,7 +47,7 @@ export default {
 :root {
 	--white: #F1F1F1;
 	--black: #0f0f0f;
-	--general-margin: 3em;
+	--general-margin: 5em;
 	--global-margin: 3em;
 }
 

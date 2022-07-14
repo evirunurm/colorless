@@ -37,8 +37,11 @@
 					</router-link>
 				</div>
 			</nav>
-
 			<div class="social-media__container">
+				<div class="social-media__icon">
+					<a target="_blank" href="https://www.youtube.com/channel/UCr3f_Nm2NO8i_1pBMAdd3YQ"><img
+						src="../assets/social-media/youtube.svg" alt="Youtube Link"></a>
+				</div>
 				<div class="social-media__icon">
 					<a target="_blank" href="https://open.spotify.com/artist/7F5xtm8aWGxlxJaoqVT82f"><img
 						src="../assets/social-media/spotify.svg" alt="Spotify Link"></a>
@@ -48,7 +51,7 @@
 				</div>
 				<div class="social-media__icon">
 					<a target="_blank" href="https://www.youtube.com/channel/UCr3f_Nm2NO8i_1pBMAdd3YQ"><img
-						src="../assets/social-media/youtube.svg" alt="Youtube Link"></a>
+						src="../assets/social-media/applemusic.svg" alt="Apple Music Link"></a>
 				</div>
 				<div class="social-media__icon">
 					<a target="_blank" href=""><img src="../assets/social-media/instagram.svg" alt="Instagram Link"></a>
@@ -136,7 +139,6 @@ header {
 	width: 100vw;
 	height: 100vh;
 	flex-direction: column;
-	backdrop-filter: blur(4px) brightness(50%) contrast(120%);
 	justify-content: center;
 	align-items: center;
 	gap: 1.5em;
@@ -194,12 +196,13 @@ nav {
 	width: 100%;
 	justify-content: space-around;
 	align-items: center;
+	gap: 2rem;
+	margin: 4.5rem 4.5rem 0 4.5rem;
 }
 
 .desktop-nav-container a {
 	color: var(--white);
 	text-decoration: none;
-	margin: 0 1.25em 0 1.25em;
 	cursor: pointer;
 }
 
@@ -231,7 +234,8 @@ nav {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 0 var(--general-margin) calc(var(--general-margin) / 1.25) var(--general-margin);
+	margin: 0 0 var(--general-margin) 0  ;
+	gap: 1rem;
 }
 
 .logo {
@@ -250,11 +254,11 @@ nav {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	gap: 1rem;
 }
 
 .social-media__icon img {
-	height: 1.5em;
-	margin: 0 0.5em 0 0.5em;
+	height: 1.2rem;
 	cursor: pointer;
 }
 
@@ -300,17 +304,13 @@ nav {
 	animation: rotate-90 0.15s ease-in-out forwards;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 950px) {
 	.mobile-nav {
 		display: none;
 	}
 
 	.desktop-nav {
 		display: flex;
-	}
-
-	.social-media__icon img {
-		height: 1.5em;
 	}
 }
 </style>
