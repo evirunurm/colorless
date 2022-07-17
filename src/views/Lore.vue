@@ -1,6 +1,53 @@
 <template>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
+	<main>
+		<h1 class="font-colorless">
+		KEYS... FOR UNLOCKING NEW DEPTHS.
+		</h1>
+		<div class="keys">
+			<img class="key-image" src="/src/assets/keys/Fire_Icon.svg" alt="">
+			<img class="key-image" src="/src/assets/keys/Reverence_Icon.svg" alt="">
+			<img class="key-image" src="/src/assets/keys/Chaos_Icon.svg" alt="">
+			<img class="key-image" src="/src/assets/keys/Order_Icon.svg" alt="">
+			<img class="key-image" src="/src/assets/keys/Fear_Icon.svg" alt="">
+			<img class="key-image" src="/src/assets/keys/Ice_Icon.svg" alt="">
+		</div>
+	</main>
 </template>
 
+<style>
+
+main {
+	margin-bottom: 8rem;
+}
+
+h1 {
+	margin-bottom: 6rem;
+	text-align: center;
+	font-weight: normal;
+}
+.keys {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+}
+
+.key-image {
+	height: 200px;
+	opacity: 0.25;
+	cursor: pointer;
+}
+
+@media (max-width: 600px) {
+	.keys {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem
+	}
+
+	.key-image {
+		margin: auto;
+	}
+
+	
+}
+</style>

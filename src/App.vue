@@ -82,11 +82,11 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url("assets/logo.svg");
+	background-image: url("assets/dragon-logo.svg");
 	background-repeat: no-repeat;
 	opacity: 10%;
 	pointer-events: none;
-	background-size: 100%;
+	background-size: 65%;
 	background-position: 50% 80px;
 }
 
@@ -112,7 +112,7 @@ body {
 }
 
 .route-enter-active {
-	transition: all 0.3s ease-out;
+	transition: all 0.2s ease-out;
 }
 
 .route-leave-to {
@@ -121,7 +121,7 @@ body {
 }
 
 .route-leave-active {
-	transition: all 0.3s ease-out;
+	transition: all 0.2s ease-out;
 }
 
 

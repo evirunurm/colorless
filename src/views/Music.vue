@@ -42,19 +42,22 @@ export default {
 		showDetails(event) {
 			let element = event.target;
 			element.classList.add("cover--opened");
-			console.log(element)
 		},
 		hideDetails(event) {
 			let element = event.target;
 			element.classList.remove("cover--opened");
-			console.log(element)
 		},
-		test(event) {
-			console.log(event)
+		sortTracks() {
+			this.tracks.sort( (a, b) => {
+				return new Date(b.release) - new Date(a.release)
+			});
 		}
 	},
 	components: {
 		SquareImage,
+	},
+	mounted() {
+		this.sortTracks();
 	}
 }
 </script>
@@ -70,7 +73,6 @@ export default {
 
 .album-container {
 	position: relative;
-	margin: auto;
 	cursor: pointer;
 }
 
