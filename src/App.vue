@@ -25,7 +25,6 @@ export default {
 		backgroundController() {
 			let scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
 			this.$refs.backgroundImage.style.backgroundPosition = `50% ${((scrollTop * 0.25) - 80) * -1 }px`;
-			console.log(this.$refs.backgroundImage.style.backgroundPosition)
 		}
 	},
 	mounted() {
@@ -47,8 +46,8 @@ export default {
 :root {
 	--white: #F1F1F1;
 	--black: #0f0f0f;
-	--general-margin: 5em;
-	--global-margin: 3em;
+	--general-margin: 2em;
+	--global-margin: 2em;
 }
 
 * {
@@ -123,6 +122,16 @@ body {
 
 .route-leave-active {
 	transition: all 0.3s ease-out;
+}
+
+
+@media (min-width: 900px) {
+	:root {
+		--white: #F1F1F1;
+		--black: #0f0f0f;
+		--general-margin: 5em;
+		--global-margin: 3em;
+	}
 }
 
 </style>

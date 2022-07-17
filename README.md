@@ -29,17 +29,18 @@
   - Links in header.
   - Change mobile nav button to become a cross.
   - Better cursor follower.
-  - Change Colorless Font src file.
+  - ~~Change Colorless Font src file.~~
   - In case there are no links in Music section, a text saying something like "Not out yet".
   - In music section, same distance between each cover. Border on the outer side instead of separation.
   - Faster animation in Covers and Sections.
   - Back to the top animation research: custom.
-  - More space between link in mobile nav.
-  - Change nav in Phone.
+  - ~~More space between link in mobile nav.~~
+  - ~~Change nav in Phone.~~
   - Change covers.
   - ~~Change header, replacing logo.~~
-  - Change header, responsiveness.
+  - ~~Change header, responsiveness.~~
   - ~~Change header, margins and alignment.~~
-  - Change header links.
   - ~~Change size logo.~~
   - Change background img
+  - ~~Fixed nav burger mobile + invert()~~
+  - 

@@ -7,7 +7,6 @@
 					<img ref="burger" class="nav__burger" src="../assets/burger_menu.svg" alt="Menu Button">
 				</button>
 				<section class="nav--opened mobile-nav" v-if="navOpened">
-					<div class="nav--opened__background"/>
 					<router-link @click="navOpened = false" class="font-colorless section-title" to="/">Home</router-link>
 					<router-link @click="navOpened = false" class="font-colorless section-title" to="/music">Music
 					</router-link>
@@ -15,6 +14,34 @@
 					</router-link>
 					<router-link @click="navOpened = false" class="font-colorless section-title" to="/contact">Contact
 					</router-link>
+					<div class="social-media__container--mobile">
+						<div class="social-media__icon ">
+							<a target="_blank" href="https://www.youtube.com/channel/UCr3f_Nm2NO8i_1pBMAdd3YQ"><img
+								src="../assets/social-media/youtube.svg" alt="Youtube Link"></a>
+						</div>
+						<div class="social-media__icon ">
+							<a target="_blank" href="https://open.spotify.com/artist/7F5xtm8aWGxlxJaoqVT82f"><img
+								src="../assets/social-media/spotify.svg" alt="Spotify Link"></a>
+						</div>
+						<div class="social-media__icon ">
+							<a target="_blank" href=""><img src="../assets/social-media/audius.svg" alt="Audius Link"></a>
+						</div>
+						<div class="social-media__icon ">
+							<a target="_blank" href="https://www.youtube.com/channel/UCr3f_Nm2NO8i_1pBMAdd3YQ"><img
+								src="../assets/social-media/applemusic.svg" alt="Apple Music Link"></a>
+						</div>
+						<div class="social-media__icon ">
+							<a target="_blank" href=""><img src="../assets/social-media/instagram.svg"
+																	  alt="Instagram Link"></a>
+						</div>
+						<div class="social-media__icon ">
+							<a target="_blank" href=""><img src="../assets/social-media/twitter.svg" alt="Twitter Link"></a>
+						</div>
+						<div class="social-media__icon">
+							<a target="_blank" href="https://open.spotify.com/artist/7F5xtm8aWGxlxJaoqVT82f"><img
+								src="../assets/social-media/reddit.svg" alt="Reddit Link"></a>
+						</div>
+					</div>
 				</section>
 				<div class="desktop-nav-container">
 					<router-link class="desktop-nav font-colorless section-title"
@@ -37,29 +64,29 @@
 					</router-link>
 				</div>
 			</nav>
-			<div class="social-media__container">
-				<div class="social-media__icon">
+			<div class="social-media__container desktop">
+				<div class="social-media__icon desktop">
 					<a target="_blank" href="https://www.youtube.com/channel/UCr3f_Nm2NO8i_1pBMAdd3YQ"><img
 						src="../assets/social-media/youtube.svg" alt="Youtube Link"></a>
 				</div>
-				<div class="social-media__icon">
+				<div class="social-media__icon desktop">
 					<a target="_blank" href="https://open.spotify.com/artist/7F5xtm8aWGxlxJaoqVT82f"><img
 						src="../assets/social-media/spotify.svg" alt="Spotify Link"></a>
 				</div>
-				<div class="social-media__icon">
+				<div class="social-media__icon desktop">
 					<a target="_blank" href=""><img src="../assets/social-media/audius.svg" alt="Audius Link"></a>
 				</div>
-				<div class="social-media__icon">
+				<div class="social-media__icon desktop">
 					<a target="_blank" href="https://www.youtube.com/channel/UCr3f_Nm2NO8i_1pBMAdd3YQ"><img
 						src="../assets/social-media/applemusic.svg" alt="Apple Music Link"></a>
 				</div>
-				<div class="social-media__icon">
+				<div class="social-media__icon desktop">
 					<a target="_blank" href=""><img src="../assets/social-media/instagram.svg" alt="Instagram Link"></a>
 				</div>
-				<div class="social-media__icon">
+				<div class="social-media__icon desktop">
 					<a target="_blank" href=""><img src="../assets/social-media/twitter.svg" alt="Twitter Link"></a>
 				</div>
-				<div class="social-media__icon">
+				<div class="social-media__icon desktop">
 					<a target="_blank" href="https://open.spotify.com/artist/7F5xtm8aWGxlxJaoqVT82f"><img
 						src="../assets/social-media/reddit.svg" alt="Reddit Link"></a>
 				</div>
@@ -79,11 +106,9 @@ export default {
 	methods: {
 		animateBurger() {
 			if (this.navOpened) {
-				this.$refs.burger.classList.remove("rotate-90");
-				this.$refs.burger.classList.add("rotate90")
+				this.$refs.burger.classList.add("invert-color")
 			} else {
-				this.$refs.burger.classList.remove("rotate90");
-				this.$refs.burger.classList.add("rotate-90");
+				this.$refs.burger.classList.remove("invert-color");
 			}
 		},
 		updateScroll() {
@@ -127,6 +152,10 @@ header {
 	width: 100%;
 }
 
+.desktop {
+	display: none;
+}
+
 /* *** */
 /* NAV */
 /* *** */
@@ -141,14 +170,20 @@ header {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 1.5em;
+	gap: 2em;
 	z-index: 10;
+	backdrop-filter: invert();
+	background: var(--white);
+	background-image: url("/src/assets/dragon_logo_black.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 60%;
+	background-blend-mode: overlay;
 }
 
 .nav--opened a {
 	text-decoration: none;
-	font-size: 2em;
-	color: var(--white);
+	color: var(--black);
 	z-index: 20;
 	cursor: pointer;
 }
@@ -161,11 +196,12 @@ header {
 /* BURGER */
 
 .nav__burger-container {
-	position: absolute;
-	width: 4rem;
-	height: 4rem;
+	position: fixed;
+	width: 3.25rem;
+	height: 3.25rem;
 	display: flex;
-	left: 0;
+	right: calc(var(--general-margin) - 0.5rem);
+	top: 2.25rem;
 	align-items: center;
 	justify-content: center;
 	z-index: 20;
@@ -178,17 +214,13 @@ header {
 	cursor: pointer;
 }
 
-.nav__burger img {
-	color: var(--white);
-}
-
 
 /* DESKTOP NAV */
 nav {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	min-height: 9em;
+	margin: var(--general-margin) 0 0 0;
 }
 
 .desktop-nav-container {
@@ -197,7 +229,7 @@ nav {
 	justify-content: space-around;
 	align-items: center;
 	gap: 2rem;
-	margin: 4.5rem 4.5rem 0 4.5rem;
+	margin: 1.25rem 4.5rem 0 4.5rem;
 }
 
 .desktop-nav-container a {
@@ -234,20 +266,19 @@ nav {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 0 0 var(--general-margin) 0  ;
+	margin: 0 0 var(--general-margin) 0;
 	gap: 1rem;
 }
 
 .logo {
-	height: 5.5em;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 0.75em 0 0.75em 0;
 }
 
 .logo img {
-	height: 100%;
+	width: 50%;
+	min-width: 125px;
 }
 
 .social-media__container {
@@ -263,48 +294,40 @@ nav {
 }
 
 .section-title {
-	font-size: 2.25rem;
+	font-size: 3rem;
 }
 
 /* Mobile nav links */
-
 .mobile-nav > a {
-	font-size: 2.75rem;
+	font-size: 2.25rem;
 }
 
-/* ********* */
-/* ANIMATION */
-/* ********* */
-
-@keyframes rotate90 {
-	from {
-		transform: rotate(0deg);
-	}
-
-	to {
-		transform: rotate(90deg);
-	}
+/* Mobile nav socials */
+.social-media__container--mobile {
+	position: fixed;
+	z-index: 100;
+	filter: invert();
+	right: calc(var(--general-margin) - 0.25rem); /* Minus the padding from it's parent. */
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
 }
 
-@keyframes rotate-90 {
-	from {
-		transform: rotate(90deg);
-	}
-
-	to {
-		transform: rotate(0deg);
-	}
+.social-media__container--mobile a{
+	display: grid;
+	place-items: center;
+	padding: 0.25rem; /* So it's more accessible to the finger */
 }
 
-.rotate90 {
-	animation: rotate90 0.15s ease-in-out forwards;
+
+
+/* INVERT COLOR BURGER */
+.invert-color {
+	filter: invert();
 }
 
-.rotate-90 {
-	animation: rotate-90 0.15s ease-in-out forwards;
-}
 
-@media (min-width: 950px) {
+@media (min-width: 1056px) {
 	.mobile-nav {
 		display: none;
 	}
@@ -312,5 +335,22 @@ nav {
 	.desktop-nav {
 		display: flex;
 	}
+
+	.desktop {
+		display: inherit;
+	}
+
+	.logo img {
+		width: 100%;
+	}
+
+}
+
+@media (min-width: 700px) {
+	.nav__burger-container {
+		width: 4rem;
+		height: 4rem;
+	}
+
 }
 </style>
