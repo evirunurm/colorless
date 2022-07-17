@@ -1,18 +1,15 @@
 <template>
 	<section id="music" class="main">
 		<div class="albums-container">
-			<div v-for="(track, index) in tracks" @click.self="rotate($event)" @mouseleave.self="rotateBack($event)" class="album-container" :key="index">
-				<div class="cover-front">
+			<div v-for="(track, index) in tracks" class="album-container" :key="index"
+				  @click.self="showDetails($event)"
+				  @mouseleave.self="hideDetails($event)">
+				<div class="cover">
 					<SquareImage :imgSrc="'covers/' + track.cover"/>
-				</div>
-
-				<div class="cover-back">
-					<h3 class="track-title">{{ track.name }}</h3>
-					<p class="track-listen-text">LISTEN ON</p>
-					<div class="album-links">
+					<div class="details">
 						<div class="album-link" v-for="link in getLinks(track)">
-							<img :src="'src/assets/social-media/' + link.replace('link', '').toLowerCase() + '.svg'"
-								  :alt="link">
+														<img :src="'src/assets/social-media/' + link.replace('link', '').toLowerCase() + '.svg'"
+																						  :alt="link">
 						</div>
 					</div>
 				</div>
@@ -42,21 +39,15 @@ export default {
 			}
 			return links;
 		},
-		rotate(event) {
-			let element = event.target
-			let coverFront = element.getElementsByClassName("cover-front")[0];
-			let coverBack = element.getElementsByClassName("cover-back")[0];
-
-			coverFront.style.transform = "rotateY(180deg)";
-			coverBack.style.transform = "rotateY(0deg)";
+		showDetails(event) {
+			let element = event.target;
+			element.classList.add("cover--opened");
+			console.log(element)
 		},
-		rotateBack(event) {
-			let element = event.target
-			let coverFront = element.getElementsByClassName("cover-front")[0];
-			let coverBack = element.getElementsByClassName("cover-back")[0];
-
-			coverFront.style.transform = "rotateY(0deg)";
-			coverBack.style.transform = "rotateY(180deg)";
+		hideDetails(event) {
+			let element = event.target;
+			element.classList.remove("cover--opened");
+			console.log(element)
 		}
 	},
 	components: {
@@ -69,94 +60,86 @@ export default {
 .albums-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 1.5em;
+	gap: 3rem;
+	width: fit-content;
+	margin: auto;
 }
 
 .album-container {
 	position: relative;
-	width: fit-content;
 	margin: auto;
 	cursor: pointer;
 }
 
-.album-container:hover .cover-front::before {
-	content: "";
-	position: absolute;
-	height: calc(100% + 20px);
-	width: calc(100% + 20px);
-	top: -10px;
-	left: -10px;
-	z-index: 10;
-	background-image: url("src/assets/logo.svg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-
+.cover {
+	pointer-events: none;
+	position: relative;
+	overflow: hidden;
 }
 
-.cover-back {
-	background-color: rgba(255, 255, 255, 0.25);
+/* COVER HOVER ANIMATIONS */
+
+
+.cover div {
+	transition: transform 0.09s ease-in;
+}
+
+.album-container:hover .cover {
+	transition: transform 0.15s ease-in;
+	transform: scale(1.05);
+}
+
+div.details {
+	display: none;
 	position: absolute;
 	top: 0;
-	left: 0;
-	width: 100%;
+	right: -5px;
+	width: 38.2%;
 	height: 100%;
-	transform: rotateY(180deg);
-	backface-visibility: hidden;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	padding: 2em 2em 2em 2em;
+	z-index: 100;
+	background: white;
+	mix-blend-mode: difference;
 }
 
-/* Cover front and back  */
-
-.cover-front, cover-back {
-	pointer-events: none;
+.details img {
+	mix-blend-mode: difference;
+	max-width: 30%;
 }
 
-.cover-front {
-  backface-visibility: hidden;
-  transition: 0.3s ease-out;
+.details div {
+	display: grid;
+	place-items: center;
 }
 
-.cover-back {
-  transition: 0.3s ease-out;
+.cover--opened {
+	position: relative;
 }
 
-/* COVER BACK CONTENT */
-
-.track-title {
-	padding-bottom: 0.5rem;
-}
-
-.album-links {
-	height: 100%;
-	width: 100%;
+.cover--opened div.details {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 1rem;
+	animation: move 0.15s ease-in-out;
 }
 
-.album-link {
-	height: 2em;
-	width: 2em;
-	overflow: hidden;
-	cursor: pointer;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+
+@keyframes move {
+	from {
+		right: -100px;
+	}
+	to {
+		right: -5px;
+	}
 }
+
+
+/* COVER LINKS CONTENT */
 
 .album-link img {
 	width: 100%;
 }
-
-
-/*  */
 
 h2.warning {
 	text-align: center;

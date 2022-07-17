@@ -43,4 +43,4 @@
   - ~~Change size logo.~~
   - Change background img
   - ~~Fixed nav burger mobile + invert()~~
-  - 
+  - Animation in mobile menu

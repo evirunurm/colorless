@@ -220,7 +220,7 @@ nav {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	margin: var(--general-margin) 0 0 0;
+	padding: var(--general-margin) var(--general-margin) 0 var(--general-margin);
 }
 
 .desktop-nav-container {
@@ -229,7 +229,7 @@ nav {
 	justify-content: space-around;
 	align-items: center;
 	gap: 2rem;
-	margin: 1.25rem 4.5rem 0 4.5rem;
+	margin: 1.25rem 0 0 0;
 }
 
 .desktop-nav-container a {
@@ -279,6 +279,7 @@ nav {
 .logo img {
 	width: 50%;
 	min-width: 125px;
+	max-width: 500px;
 }
 
 .social-media__container {
@@ -318,8 +319,6 @@ nav {
 	place-items: center;
 	padding: 0.25rem; /* So it's more accessible to the finger */
 }
-
-
 
 /* INVERT COLOR BURGER */
 .invert-color {
