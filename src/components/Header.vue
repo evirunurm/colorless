@@ -267,7 +267,7 @@ nav {
 	flex-direction: column;
 	align-items: center;
 	margin: 0 0 var(--general-margin) 0;
-	gap: 1rem;
+	gap: 1.5rem;
 }
 
 .logo {

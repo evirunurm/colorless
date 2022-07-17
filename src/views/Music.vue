@@ -2,15 +2,15 @@
 	<section id="music" class="main">
 		<div class="albums-container">
 			<div v-for="(track, index) in tracks" class="album-container" :key="index"
-				  @click.self="showDetails($event)"
+				  >
+				<div class="cover" @click.stop="showDetails($event)"
 				  @mouseleave.self="hideDetails($event)">
-				<div class="cover">
-					<SquareImage :imgSrc="'covers/' + track.cover"/>
-					<div class="details">
-						<div class="album-link" v-for="link in getLinks(track)">
+					<SquareImage class="cover-image" :imgSrc="'covers/' + track.cover"/>
+					<div   class="details">
+						<a target="_blank" class="album-link" v-for="link in getLinks(track)" :href="track[link]">
 														<img :src="'src/assets/social-media/' + link.replace('link', '').toLowerCase() + '.svg'"
 																						  :alt="link">
-						</div>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -48,6 +48,9 @@ export default {
 			let element = event.target;
 			element.classList.remove("cover--opened");
 			console.log(element)
+		},
+		test(event) {
+			console.log(event)
 		}
 	},
 	components: {
@@ -72,9 +75,12 @@ export default {
 }
 
 .cover {
-	pointer-events: none;
 	position: relative;
 	overflow: hidden;
+}
+
+.cover-image {
+	pointer-events: none;
 }
 
 /* COVER HOVER ANIMATIONS */
@@ -106,7 +112,7 @@ div.details {
 	max-width: 30%;
 }
 
-.details div {
+.details a {
 	display: grid;
 	place-items: center;
 }
