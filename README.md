@@ -39,7 +39,7 @@
   - ~~Favicon~~
   - ~~Change background img~~
   - ~~Back to the top animation research: custom.~~
-  - Form working in Contact section.
+  - ~~Form working in Contact section.~~
   - ~~Text contact form.~~
   - ~~More sophisticated footer.~~
   - ~~Links in header.~~
