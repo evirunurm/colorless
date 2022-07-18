@@ -40,7 +40,7 @@ export default {
 			return links;
 		},
 		getSrc(link) {
-			return 'src/assets/' + link.replace('link', '').toLowerCase() + '.svg';
+			return 'media/' + link.replace('link', '').toLowerCase() + '.svg';
 		},
 		showDetails(event) {
 			let element = event.target;
