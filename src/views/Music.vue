@@ -8,7 +8,7 @@
 					<SquareImage class="cover-image" :imgSrc="'covers/' + track.cover"/>
 					<div   class="details">
 						<a target="_blank" class="album-link" v-for="link in getLinks(track)" :href="track[link]">
-														<img :src="'src/assets/' + link.replace('link', '').toLowerCase() + '.svg'"
+														<img :src="getSrc(link)"
 																						  :alt="link">
 						</a>
 					</div>
@@ -38,6 +38,9 @@ export default {
 				}
 			}
 			return links;
+		},
+		getSrc(link) {
+			return 'src/assets/' + link.replace('link', '').toLowerCase() + '.svg';
 		},
 		showDetails(event) {
 			let element = event.target;
