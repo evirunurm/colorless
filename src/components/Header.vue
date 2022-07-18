@@ -18,37 +18,37 @@
 					<div class="social-media__container--mobile">
 						<div class="social-media__icon ">
 							<a target="_blank" href="https://www.youtube.com/channel/UCr3f_Nm2NO8i_1pBMAdd3YQ"><img
-								src="../assets/social-media/youtube.svg" alt="Youtube Link">
+								src="../assets/youtube.svg" alt="Youtube Link">
 							</a>
 						</div>
 						<div class="social-media__icon ">
 							<a target="_blank" href="https://open.spotify.com/artist/75AyHLmBIyxRYMSFTKInkn"><img
-								src="../assets/social-media/spotify.svg" alt="Spotify Link">
+								src="../assets/spotify.svg" alt="Spotify Link">
 							</a>
 						</div>
 						<div class="social-media__icon ">
 							<a target="_blank" href="https://audius.co/colorlessbass">
-								<img src="../assets/social-media/audius.svg" alt="Audius Link">
+								<img src="../assets/audius.svg" alt="Audius Link">
 							</a>
 						</div>
 						<div class="social-media__icon ">
 							<a target="_blank" href="https://music.apple.com/us/artist/colorless/1632927788"><img
-								src="../assets/social-media/applemusic.svg" alt="Apple Music Link"></a>
+								src="../assets/applemusic.svg" alt="Apple Music Link"></a>
 						</div>
 						<div class="social-media__icon ">
 							<a target="_blank" href="https://www.instagram.com/colorlessbass/"><img
-								src="../assets/social-media/instagram.svg"
+								src="../assets/instagram.svg"
 								alt="Instagram Link">
 							</a>
 						</div>
 						<div class="social-media__icon ">
 							<a target="_blank" href="https://twitter.com/Colorlesssssss">
-								<img src="../assets/social-media/twitter.svg" alt="Twitter Link">
+								<img src="../assets/twitter.svg" alt="Twitter Link">
 							</a>
 						</div>
 						<div class="social-media__icon">
 							<a target="_blank" href="https://www.reddit.com/user/__COLORLESS__">
-								<img src="../assets/social-media/reddit.svg" alt="Reddit Link">
+								<img src="../assets/reddit.svg" alt="Reddit Link">
 							</a>
 						</div>
 					</div>
@@ -79,37 +79,37 @@
 			<div class="social-media__container desktop">
 				<div class="social-media__icon ">
 					<a target="_blank" href="https://www.youtube.com/channel/UCr3f_Nm2NO8i_1pBMAdd3YQ"><img
-						src="../assets/social-media/youtube.svg" alt="Youtube Link">
+						src="../assets/youtube.svg" alt="Youtube Link">
 					</a>
 				</div>
 				<div class="social-media__icon ">
 					<a target="_blank" href="https://open.spotify.com/artist/75AyHLmBIyxRYMSFTKInkn"><img
-						src="../assets/social-media/spotify.svg" alt="Spotify Link">
+						src="../assets/spotify.svg" alt="Spotify Link">
 					</a>
 				</div>
 				<div class="social-media__icon ">
 					<a target="_blank" href="https://audius.co/colorlessbass">
-						<img src="../assets/social-media/audius.svg" alt="Audius Link">
+						<img src="../assets/audius.svg" alt="Audius Link">
 					</a>
 				</div>
 				<div class="social-media__icon ">
 					<a target="_blank" href="https://music.apple.com/us/artist/colorless/1632927788"><img
-						src="../assets/social-media/applemusic.svg" alt="Apple Music Link"></a>
+						src="../assets/applemusic.svg" alt="Apple Music Link"></a>
 				</div>
 				<div class="social-media__icon ">
 					<a target="_blank" href="https://www.instagram.com/colorlessbass/"><img
-						src="../assets/social-media/instagram.svg"
+						src="../assets/instagram.svg"
 						alt="Instagram Link">
 					</a>
 				</div>
 				<div class="social-media__icon ">
 					<a target="_blank" href="https://twitter.com/Colorlesssssss">
-						<img src="../assets/social-media/twitter.svg" alt="Twitter Link">
+						<img src="../assets/twitter.svg" alt="Twitter Link">
 					</a>
 				</div>
 				<div class="social-media__icon">
 					<a target="_blank" href="https://www.reddit.com/user/__COLORLESS__">
-						<img src="../assets/social-media/reddit.svg" alt="Reddit Link">
+						<img src="../assets/reddit.svg" alt="Reddit Link">
 					</a>
 				</div>
 			</div>
