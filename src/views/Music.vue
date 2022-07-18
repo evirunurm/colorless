@@ -51,7 +51,7 @@ export default {
 			this.tracks.sort( (a, b) => {
 				return new Date(b.release) - new Date(a.release)
 			});
-		}
+		},
 	},
 	components: {
 		SquareImage,
