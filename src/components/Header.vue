@@ -64,7 +64,7 @@
 									 to="/music">Music
 					</router-link>
 					<div class="logo">
-						<img src="../assets/logo.svg" alt="Simple white Banshee logo">
+						<img @click="$router.push('/')" src="../assets/logo.svg" alt="Simple white Banshee logo">
 					</div>
 					<router-link class="desktop-nav font-colorless section-title"
 									 :class="selectedSection === 'lore' ? 'section--selected' : 'section'" id="lore" to="/lore">
@@ -354,7 +354,7 @@ nav {
 }
 
 .move-enter-active {
-	transition: all 0.1s ease-in-out;
+	transition: all 0.05s ease-in;
 }
 
 .move-leave-to {
