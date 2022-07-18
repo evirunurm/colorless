@@ -8,7 +8,7 @@
 					<SquareImage class="cover-image" :imgSrc="'covers/' + track.cover"/>
 					<div   class="details">
 						<a target="_blank" class="album-link" v-for="link in getLinks(track)" :href="track[link]">
-														<img :src="'src/assets/social-media/' + link.replace('link', '').toLowerCase() + '.svg'"
+														<img :src="'assets/' + link.replace('link', '').toLowerCase() + '.svg'"
 																						  :alt="link">
 						</a>
 					</div>

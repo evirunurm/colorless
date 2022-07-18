@@ -1,7 +1,7 @@
 <template>
 	<section id="home" class="home main">
 		<article class="main-article">
-			<SquareImage :imgSrc="'public/covers/' + latest.cover"/>
+			<SquareImage :imgSrc="'covers/' + latest.cover"/>
 			<div class="text-container">
 				<h3 class="title font-colorless">LATEST REALEASE</h3>
 				<p class="text">
