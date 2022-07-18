@@ -57,7 +57,7 @@
 }
 
 label {
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
 .several-labels-container {
@@ -84,7 +84,6 @@ input, textarea {
 
 input:focus {
 	outline-color: white;
-
 }
 
 .main {
@@ -105,7 +104,7 @@ input:focus {
 }
 
 .send-button button {
-	border: 1px solid white;
+	border: none;
 	color: var(--white);
 	font-weight: bold;
 	align-self: center;
@@ -122,15 +121,16 @@ input:focus {
 	content: "";
 	position: absolute;
 	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	background: url("/src/assets/outline.svg");
+	background-size: calc(100% + 2em);
+	background-position: center;
 }
 
 .send-button button:hover {
-	box-shadow: 0 0 0 0.25em rgba(255, 255, 255, 0.2);
-	background-color: var(--black);
-	color: var(--white);
+	text-decoration: line-through;
 }
 
 @media (min-width: 600px) {
@@ -159,7 +159,10 @@ input:focus {
 	}
 
 	.input-container-area {
-		width: 100%;
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
 	}
+
 }
 </style>

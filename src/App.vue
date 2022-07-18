@@ -1,15 +1,20 @@
-<template>
-	<div id="noise" ></div>
-	<div ref="backgroundImage" id="background-image" ></div>
-	<Header></Header>
-	<main>
-		<router-view v-slot="{ Component }">
-			<transition name="route" mode="out-in">
-				<component :is="Component"></component>
-			</transition>
-		</router-view>
-	</main>
-	<Footer></Footer>
+<template >
+	<div @mousemove="setCursorFollower" @mouseleave="this.$refs.cursorFollower.style.left ='-100px'; this.$refs.cursorFollower.style.top = '-100px';">
+		<div ref="cursorFollower" id="cursorFollower" class="cursor-follower">
+			<div ref="cursorFollowerPointer" class="cursorFollower--pointer"/>
+		</div>
+		<div id="noise"></div>
+		<div ref="backgroundImage" id="background-image"></div>
+		<Header></Header>
+		<main>
+			<router-view v-slot="{ Component }">
+				<transition name="route" mode="out-in">
+					<component :is="Component"></component>
+				</transition>
+			</router-view>
+		</main>
+		<Footer></Footer>
+	</div>
 </template>
 
 <script>
@@ -24,8 +29,28 @@ export default {
 	methods: {
 		backgroundController() {
 			let scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
-			this.$refs.backgroundImage.style.backgroundPosition = `50% ${((scrollTop * 0.25) - 80) * -1 }px`;
-		}
+			this.$refs.backgroundImage.style.backgroundPosition = `50% ${((scrollTop * 0.25) - 80) * -1}px`;
+		},
+		setCursorFollower(event) {
+			let width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+			let cursorY = parseInt(this.$refs.cursorFollower.style.top.replace("px", ""));
+			this.$refs.cursorFollower.style.top = `${(event.path[1].pageYOffset * 2) - cursorY}px`;
+
+			if (width > 700) {
+				this.$refs.cursorFollower.style.left = `${event.pageX}px`;
+				this.$refs.cursorFollower.style.top = `${event.pageY}px`;
+				if (window.getComputedStyle(event.target).cursor === "pointer") {
+					this.$refs.cursorFollowerPointer.style.opacity = "1";
+					return;
+				}
+				this.$refs.cursorFollowerPointer.style.opacity = "0";
+			} else {
+				this.$refs.cursorFollower.style.left = "-100px";
+				this.$refs.cursorFollower.style.top = "-100px";
+			}
+
+		},
 	},
 	mounted() {
 		document.addEventListener("scroll", () => {
@@ -124,6 +149,33 @@ body {
 	transition: all 0.2s ease-out;
 }
 
+/* CURSOR */
+
+#cursorFollower {
+	top: -100px;
+	position: absolute;
+	height: 2.5em;
+	width: 2.5em;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 50;
+	pointer-events: none;
+	backdrop-filter: invert(100%) hue-rotate(120deg);
+}
+
+.cursorFollower--pointer {
+	opacity: 0;
+	position: relative;
+	height: 150%;
+	width: 150%;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	border-radius: 50%;
+	border: 2px solid white;
+	transition: 0.1s linear;
+}
+
 
 @media (min-width: 900px) {
 	:root {
@@ -132,6 +184,11 @@ body {
 		--general-margin: 5em;
 		--global-margin: 3em;
 	}
+
+	#background-image {
+		background-size: 40%;
+	}
+
 }
 
 </style>

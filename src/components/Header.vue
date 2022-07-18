@@ -6,7 +6,8 @@
 						  class="nav__burger-container mobile-nav">
 					<img ref="burger" class="nav__burger" src="../assets/burger_menu.svg" alt="Menu Button">
 				</button>
-				<section class="nav--opened mobile-nav" v-if="navOpened">
+				<transition name="move">
+					<section class="nav--opened mobile-nav" v-if="navOpened">
 					<router-link @click="navOpened = false" class="font-colorless section-title" to="/">Home</router-link>
 					<router-link @click="navOpened = false" class="font-colorless section-title" to="/music">Music
 					</router-link>
@@ -17,32 +18,43 @@
 					<div class="social-media__container--mobile">
 						<div class="social-media__icon ">
 							<a target="_blank" href="https://www.youtube.com/channel/UCr3f_Nm2NO8i_1pBMAdd3YQ"><img
-								src="../assets/social-media/youtube.svg" alt="Youtube Link"></a>
+								src="../assets/social-media/youtube.svg" alt="Youtube Link">
+							</a>
 						</div>
 						<div class="social-media__icon ">
-							<a target="_blank" href="https://open.spotify.com/artist/7F5xtm8aWGxlxJaoqVT82f"><img
-								src="../assets/social-media/spotify.svg" alt="Spotify Link"></a>
+							<a target="_blank" href="https://open.spotify.com/artist/75AyHLmBIyxRYMSFTKInkn"><img
+								src="../assets/social-media/spotify.svg" alt="Spotify Link">
+							</a>
 						</div>
 						<div class="social-media__icon ">
-							<a target="_blank" href=""><img src="../assets/social-media/audius.svg" alt="Audius Link"></a>
+							<a target="_blank" href="https://audius.co/colorlessbass">
+								<img src="../assets/social-media/audius.svg" alt="Audius Link">
+							</a>
 						</div>
 						<div class="social-media__icon ">
-							<a target="_blank" href="https://www.youtube.com/channel/UCr3f_Nm2NO8i_1pBMAdd3YQ"><img
+							<a target="_blank" href="https://music.apple.com/us/artist/colorless/1632927788"><img
 								src="../assets/social-media/applemusic.svg" alt="Apple Music Link"></a>
 						</div>
 						<div class="social-media__icon ">
-							<a target="_blank" href=""><img src="../assets/social-media/instagram.svg"
-																	  alt="Instagram Link"></a>
+							<a target="_blank" href="https://www.instagram.com/colorlessbass/"><img
+								src="../assets/social-media/instagram.svg"
+								alt="Instagram Link">
+							</a>
 						</div>
 						<div class="social-media__icon ">
-							<a target="_blank" href=""><img src="../assets/social-media/twitter.svg" alt="Twitter Link"></a>
+							<a target="_blank" href="https://twitter.com/Colorlesssssss">
+								<img src="../assets/social-media/twitter.svg" alt="Twitter Link">
+							</a>
 						</div>
 						<div class="social-media__icon">
-							<a target="_blank" href="https://open.spotify.com/artist/7F5xtm8aWGxlxJaoqVT82f"><img
-								src="../assets/social-media/reddit.svg" alt="Reddit Link"></a>
+							<a target="_blank" href="https://www.reddit.com/user/__COLORLESS__">
+								<img src="../assets/social-media/reddit.svg" alt="Reddit Link">
+							</a>
 						</div>
 					</div>
 				</section>
+				</transition>
+
 				<div class="desktop-nav-container">
 					<router-link class="desktop-nav font-colorless section-title"
 									 :class="selectedSection === 'home' ? 'section--selected' : 'section'" id="home" to="/">Home
@@ -65,30 +77,40 @@
 				</div>
 			</nav>
 			<div class="social-media__container desktop">
-				<div class="social-media__icon desktop">
+				<div class="social-media__icon ">
 					<a target="_blank" href="https://www.youtube.com/channel/UCr3f_Nm2NO8i_1pBMAdd3YQ"><img
-						src="../assets/social-media/youtube.svg" alt="Youtube Link"></a>
+						src="../assets/social-media/youtube.svg" alt="Youtube Link">
+					</a>
 				</div>
-				<div class="social-media__icon desktop">
-					<a target="_blank" href="https://open.spotify.com/artist/7F5xtm8aWGxlxJaoqVT82f"><img
-						src="../assets/social-media/spotify.svg" alt="Spotify Link"></a>
+				<div class="social-media__icon ">
+					<a target="_blank" href="https://open.spotify.com/artist/75AyHLmBIyxRYMSFTKInkn"><img
+						src="../assets/social-media/spotify.svg" alt="Spotify Link">
+					</a>
 				</div>
-				<div class="social-media__icon desktop">
-					<a target="_blank" href=""><img src="../assets/social-media/audius.svg" alt="Audius Link"></a>
+				<div class="social-media__icon ">
+					<a target="_blank" href="https://audius.co/colorlessbass">
+						<img src="../assets/social-media/audius.svg" alt="Audius Link">
+					</a>
 				</div>
-				<div class="social-media__icon desktop">
-					<a target="_blank" href="https://www.youtube.com/channel/UCr3f_Nm2NO8i_1pBMAdd3YQ"><img
+				<div class="social-media__icon ">
+					<a target="_blank" href="https://music.apple.com/us/artist/colorless/1632927788"><img
 						src="../assets/social-media/applemusic.svg" alt="Apple Music Link"></a>
 				</div>
-				<div class="social-media__icon desktop">
-					<a target="_blank" href=""><img src="../assets/social-media/instagram.svg" alt="Instagram Link"></a>
+				<div class="social-media__icon ">
+					<a target="_blank" href="https://www.instagram.com/colorlessbass/"><img
+						src="../assets/social-media/instagram.svg"
+						alt="Instagram Link">
+					</a>
 				</div>
-				<div class="social-media__icon desktop">
-					<a target="_blank" href=""><img src="../assets/social-media/twitter.svg" alt="Twitter Link"></a>
+				<div class="social-media__icon ">
+					<a target="_blank" href="https://twitter.com/Colorlesssssss">
+						<img src="../assets/social-media/twitter.svg" alt="Twitter Link">
+					</a>
 				</div>
-				<div class="social-media__icon desktop">
-					<a target="_blank" href="https://open.spotify.com/artist/7F5xtm8aWGxlxJaoqVT82f"><img
-						src="../assets/social-media/reddit.svg" alt="Reddit Link"></a>
+				<div class="social-media__icon">
+					<a target="_blank" href="https://www.reddit.com/user/__COLORLESS__">
+						<img src="../assets/social-media/reddit.svg" alt="Reddit Link">
+					</a>
 				</div>
 			</div>
 		</div>
@@ -115,7 +137,8 @@ export default {
 			if (this.navOpened) {
 				document.getElementsByTagName("body")[0].parentNode.style.overflowY = "hidden";
 			} else {
-				document.getElementsByTagName("body")[0].parentNode.style.overflowY = "scroll";
+				// was "scroll", but it added scroll even if there's no overflow happening.
+				document.getElementsByTagName("body")[0].parentNode.style.overflowY = "inherit";
 			}
 		},
 		onResize(e) {
@@ -141,7 +164,6 @@ export default {
 	beforeDestroy() {
 		window.removeEventListener('resize', this.onResize);
 	}
-
 }
 </script>
 
@@ -314,7 +336,7 @@ nav {
 	gap: 1.5rem;
 }
 
-.social-media__container--mobile a{
+.social-media__container--mobile a {
 	display: grid;
 	place-items: center;
 	padding: 0.25rem; /* So it's more accessible to the finger */
@@ -323,6 +345,24 @@ nav {
 /* INVERT COLOR BURGER */
 .invert-color {
 	filter: invert();
+}
+
+/* MOBILE NAV ANIMATION */
+
+.move-enter-from {
+	transform: translateX(1000px);
+}
+
+.move-enter-active {
+	transition: all 0.1s ease-in-out;
+}
+
+.move-leave-to {
+	transform: translateX(1000px);
+}
+
+.move-leave-active {
+	transition: all 0.25s ease-in-out;
 }
 
 

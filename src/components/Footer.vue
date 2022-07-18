@@ -2,8 +2,7 @@
 	<footer>
 		<h3><a class="font-colorless back-to-top" @click="scrollToTop">BACK TO THE TOP</a></h3>
 		<hr/>
-		<p class="credits">Developed by <a href="https://github.com/evirunurm" target="_blank" class="credits__link">Evelin
-			Virunurm</a></p>
+		<p class="credits">Copyright © 2022 | Alonso Hogue Virto</p>
 	</footer>
 </template>
 
@@ -11,7 +10,11 @@
 export default {
 	methods: {
 		scrollToTop() {
-			window.scrollTo({ top: 0, behavior: 'smooth' });
+			const c = document.documentElement.scrollTop || document.body.scrollTop;
+			  if (c > 0.3) {
+				 window.requestAnimationFrame(this.scrollToTop);
+				 window.scrollTo(0, c - c / 8);
+			  }
 		}
 	}
 }
@@ -41,7 +44,7 @@ hr {
 .credits {
 	margin: calc(var(--general-margin) / 4) 0 calc(var(--general-margin) / 4) 0;
 	font-size: 0.75em;
-	align-self: flex-end;
+	align-self: flex-start;
 	color: rgba(255, 255, 255, 0.50);
 }
 

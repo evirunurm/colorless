@@ -8,7 +8,16 @@
 					{{ latest.name }}
 				</p>
 				<p class="text">
-					"Track description"
+					Sometimes you fuck up, and you fall out of paradise, if you were ever there to begin with. <br/>
+					<br/>
+					Paradise Lost is out <a href="https://linktr.ee/ColorlessBass">everywhere</a><br/>
+					<br/>
+					Lyrics:<br/>
+
+					I watched as my flames turned to frost.<br/>
+					My body's just a host.<br/>
+					My soul took the blame as I crossed.<br/>
+					The sky is black at most.<br/>
 				</p>
 			</div>
 		</article>
@@ -45,6 +54,14 @@ export default {
 </script>
 
 <style scoped>
+
+a {
+	color: white;
+}
+
+a:hover {
+	text-decoration: line-through;
+}
 
 .home {
 	display: flex;

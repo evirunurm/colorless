@@ -34,14 +34,14 @@
   - ~~Change header, margins and alignment.~~
   - ~~Change size logo.~~
   - ~~Fixed nav burger mobile + invert()~~
-  - Animation in mobile menu
-  - Button in Contact must have a custom border.
-  - Favicon
-  - Change background img
-  - Back to the top animation research: custom.
+  - ~~Animation in mobile menu~~
+  - ~~Button in Contact must have a custom border.~~
+  - ~~Favicon~~
+  - ~~Change background img~~
+  - ~~Back to the top animation research: custom.~~
   - Form working in Contact section.
-  - Text contact form.
-  - More sophisticated footer.
-  - Links in header.
-  - Cursor follower.
-  - Contact font size in phone smaller.
+  - ~~Text contact form.~~
+  - ~~More sophisticated footer.~~
+  - ~~Links in header.~~
+  - ~~Cursor follower.~~
+  - ~~Contact font size in phone smaller.~~
