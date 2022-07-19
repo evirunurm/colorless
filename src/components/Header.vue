@@ -78,38 +78,38 @@
 			</nav>
 			<div class="social-media__container desktop">
 				<div class="social-media__icon ">
-					<a target="_blank" href="https://www.youtube.com/channel/UCr3f_Nm2NO8i_1pBMAdd3YQ"><img
-						src="../../public/media/youtube.svg" alt="Youtube Link">
+					<a target="_blank" href="https://www.youtube.com/channel/UCr3f_Nm2NO8i_1pBMAdd3YQ">
+						<img class="--pointer" src="../../public/media/youtube.svg" alt="Youtube Link">
 					</a>
 				</div>
 				<div class="social-media__icon ">
 					<a target="_blank" href="https://open.spotify.com/artist/75AyHLmBIyxRYMSFTKInkn"><img
-						src="../../public/media/spotify.svg" alt="Spotify Link">
+						 class="--pointer" src="../../public/media/spotify.svg" alt="Spotify Link">
 					</a>
 				</div>
 				<div class="social-media__icon ">
 					<a target="_blank" href="https://audius.co/colorlessbass">
-						<img src="../../public/media/audius.svg" alt="Audius Link">
+						<img  class="--pointer" src="../../public/media/audius.svg" alt="Audius Link">
 					</a>
 				</div>
 				<div class="social-media__icon ">
 					<a target="_blank" href="https://music.apple.com/us/artist/colorless/1632927788"><img
-						src="../../public/media/applemusic.svg" alt="Apple Music Link"></a>
+						 class="--pointer" src="../../public/media/applemusic.svg" alt="Apple Music Link"></a>
 				</div>
 				<div class="social-media__icon ">
 					<a target="_blank" href="https://www.instagram.com/colorlessbass/"><img
-						src="../../public/media/instagram.svg"
+						 class="--pointer" src="../../public/media/instagram.svg"
 						alt="Instagram Link">
 					</a>
 				</div>
 				<div class="social-media__icon ">
 					<a target="_blank" href="https://twitter.com/Colorlesssssss">
-						<img src="../../public/media/twitter.svg" alt="Twitter Link">
+						<img  class="--pointer" src="../../public/media/twitter.svg" alt="Twitter Link">
 					</a>
 				</div>
 				<div class="social-media__icon">
 					<a target="_blank" href="https://www.reddit.com/user/__COLORLESS__">
-						<img src="../../public/media/reddit.svg" alt="Reddit Link">
+						<img  class="--pointer" src="../../public/media/reddit.svg" alt="Reddit Link">
 					</a>
 				</div>
 			</div>
@@ -193,7 +193,7 @@ header {
 	justify-content: center;
 	align-items: center;
 	gap: 2em;
-	z-index: 10;
+	z-index: 1000;
 	backdrop-filter: invert();
 	background: var(--white);
 	background-image: url("/src/assets/dragon_logo_black.svg");
@@ -226,7 +226,7 @@ header {
 	top: 2.25rem;
 	align-items: center;
 	justify-content: center;
-	z-index: 20;
+	z-index: 10000;
 	background: none;
 	border: none;
 }

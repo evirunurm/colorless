@@ -2,7 +2,14 @@
 	<footer>
 		<h3><a class="font-colorless back-to-top" @click="scrollToTop">BACK TO THE TOP</a></h3>
 		<hr/>
-		<p class="credits">Copyright © 2022 | Alonso Hogue Virto</p>
+		<div class="horizontal">
+			<p class="credits">Copyright © 2022 | Alonso Hogue Virto</p>
+			<p class="credits">Designed by <span class="font-colorless bigger">COLORLESS</span>
+				<br/>
+				Developed by <a href="https://github.com/evirunurm" target="_blank">Evelin Virunurm</a>
+			</p>
+		</div>
+
 	</footer>
 </template>
 
@@ -42,14 +49,23 @@ hr {
 }
 
 .credits {
-	margin: calc(var(--general-margin) / 4) 0 calc(var(--general-margin) / 4) 0;
 	font-size: 0.75em;
-	align-self: flex-start;
 	color: rgba(255, 255, 255, 0.50);
 }
 
-.credits__link:hover {
-	text-decoration: underline;
+a:hover {
+	text-decoration: line-through;
+}
+
+.horizontal {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	width: 100%;
+}
+
+.bigger {
+	font-size: 1.3em;
 }
 
 .back-to-top {
@@ -65,7 +81,6 @@ hr {
 
 	.back-to-top {
 	font-size: 2.25rem;
-
 }
 
 }

@@ -45,10 +45,11 @@
   - ~~Links in header.~~
   - ~~Cursor follower.~~
   - ~~Contact font size in phone smaller.~~
-  - Separate more the link in Music section.
-  - no cursor en pc, smaller circle
-  - in contact subject to ocuppy the whole space
-  - credits : Colorless + Evelin
-  - dejar abierto el coso y
-  - ease in animation cover
-  - faster animation chnage section
+  - ~~Separate more the link in Music section.~~
+  - ~~No cursor en pc, must be just a smaller circle.~~
+  - ~~In contact: Subject must occupy the whole space available.~~
+  - ~~Add credits : Designed by Colorless + Developed by Evelin.~~
+  - ~~Maintain opened links container in Music section when clicked. Close when clicked again.~~
+  - ~~Ease-in animation in cover, Music section.~~
+  - ~~Faster animation when changing section.~~
+  - ~~Change mix method in cursor.~~
