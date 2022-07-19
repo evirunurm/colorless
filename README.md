@@ -45,3 +45,10 @@
   - ~~Links in header.~~
   - ~~Cursor follower.~~
   - ~~Contact font size in phone smaller.~~
+  - Separate more the link in Music section.
+  - no cursor en pc, smaller circle
+  - in contact subject to ocuppy the whole space
+  - credits : Colorless + Evelin
+  - dejar abierto el coso y
+  - ease in animation cover
+  - faster animation chnage section
