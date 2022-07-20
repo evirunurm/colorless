@@ -210,10 +210,6 @@ header {
 	cursor: pointer;
 }
 
-.selection-container a:hover {
-	text-decoration: line-through;
-}
-
 
 /* BURGER */
 

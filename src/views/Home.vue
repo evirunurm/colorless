@@ -59,10 +59,6 @@ a {
 	color: white;
 }
 
-a:hover {
-	text-decoration: line-through;
-}
-
 .home {
 	display: flex;
 	flex-direction: column;

@@ -53,10 +53,6 @@ hr {
 	color: rgba(255, 255, 255, 0.50);
 }
 
-a:hover {
-	text-decoration: line-through;
-}
-
 .horizontal {
 	display: flex;
 	justify-content: space-between;

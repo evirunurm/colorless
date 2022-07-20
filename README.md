@@ -6,7 +6,7 @@
 - ~~Refactor Contact section~~
 - ~~Refactor Footer section~~
 - ~~Refactor Home section~~
-- Refactor Main App
+- ~~Refactor Main App~~
 
 
 - Adjust changes:

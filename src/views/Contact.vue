@@ -129,9 +129,6 @@ input:focus {
 	background-position: center;
 }
 
-.send-button button:hover {
-	text-decoration: line-through;
-}
 
 @media (min-width: 600px) {
 	button {
