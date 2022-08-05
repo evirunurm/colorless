@@ -32,15 +32,19 @@ export default {
 			this.$refs.backgroundImage.style.backgroundPosition = `50% ${((scrollTop * 0.25) - 80) * -1}px`;
 		},
 		setCursorFollower(event) {
-			let width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+			let element = event.target;
 
+			let width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 			let cursorY = parseInt(this.$refs.cursorFollower.style.top.replace("px", ""));
+
 			this.$refs.cursorFollower.style.top = `${(event.path[1].pageYOffset * 2) - cursorY}px`;
 
-			if (width > 700) {
+			if (width > 900) {
 				this.$refs.cursorFollower.style.left = `${event.pageX}px`;
 				this.$refs.cursorFollower.style.top = `${event.pageY}px`;
-				if (window.getComputedStyle(event.target).cursor === "pointer") {
+				// Was testing for {{ window.getComputedStyle(event.target).cursor === "pointer" }} to be true
+				// Changed because I want to hide to cursor by setting cursor = "none"
+				if ( element.nodeName !== "#document" && (element.nodeName === "BUTTON" || element.nodeName === "A" || element.classList.contains("--pointer"))) {
 					this.$refs.cursorFollowerPointer.style.opacity = "1";
 					return;
 				}
@@ -49,17 +53,20 @@ export default {
 				this.$refs.cursorFollower.style.left = "-100px";
 				this.$refs.cursorFollower.style.top = "-100px";
 			}
-
 		},
+		onMount(event) {
+			this.backgroundController();
+			// Fixes the cursor staying in the same place when scrolling.
+			this.setCursorFollower(event);
+		}
 	},
 	mounted() {
-		document.addEventListener("scroll", () => {
-			this.backgroundController();
-		});
+		document.addEventListener("scroll", this.onMount.bind(event));
 	},
+	beforeDestroy() {
+		document.removeEventListener('scroll', this.onMount.bind(event));
+	}
 }
-
-
 </script>
 
 <style>
@@ -137,7 +144,7 @@ body {
 }
 
 .route-enter-active {
-	transition: all 0.2s ease-out;
+	transition: all 0.1s ease-out;
 }
 
 .route-leave-to {
@@ -146,7 +153,7 @@ body {
 }
 
 .route-leave-active {
-	transition: all 0.2s ease-out;
+	transition: all 0.1s ease-out;
 }
 
 /* CURSOR */
@@ -154,25 +161,25 @@ body {
 #cursorFollower {
 	top: -100px;
 	position: absolute;
-	height: 2.5em;
-	width: 2.5em;
+	height: 1.25em;
+	width: 1.25em;
 	border-radius: 50%;
 	transform: translate(-50%, -50%);
-	z-index: 50;
+	z-index: 100000;
 	pointer-events: none;
-	backdrop-filter: invert(100%) hue-rotate(120deg);
+	backdrop-filter: invert(100%);
 }
 
 .cursorFollower--pointer {
 	opacity: 0;
 	position: relative;
-	height: 150%;
-	width: 150%;
+	height: 200%;
+	width: 200%;
 	transform: translate(-50%, -50%);
 	top: 50%;
 	left: 50%;
+	border: 2px solid white; /* Maybe can be changed to have backdrop filter. */
 	border-radius: 50%;
-	border: 2px solid white;
 	transition: 0.1s linear;
 }
 
@@ -187,6 +194,10 @@ body {
 
 	#background-image {
 		background-size: 40%;
+	}
+
+	* {
+		cursor: none !important;
 	}
 
 }

@@ -16,7 +16,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-container">
+				<div class="input-container full">
 					<div class="several-labels-container">
 						<label for="subject" class="font-colorless">SUBJECT</label>
 						<label class="label-note" for="message">max. 40 char</label>
@@ -52,7 +52,7 @@
 }
 
 .form-container {
-	max-width: 1300px;
+	max-width: 1000px;
 	width: 100%;
 }
 
@@ -129,9 +129,6 @@ input:focus {
 	background-position: center;
 }
 
-.send-button button:hover {
-	text-decoration: line-through;
-}
 
 @media (min-width: 600px) {
 	button {
@@ -158,8 +155,14 @@ input:focus {
 		width: 45%;
 	}
 
+	.full {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	.input-container-area {
-		width: 80%;
+		width: 100%;
 		margin-left: auto;
 		margin-right: auto;
 	}

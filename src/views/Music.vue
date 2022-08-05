@@ -3,12 +3,11 @@
 		<div class="albums-container">
 			<div v-for="(track, index) in tracks" class="album-container" :key="index"
 				  >
-				<div class="cover" @click.stop="showDetails($event)"
-				  @mouseleave.self="hideDetails($event)">
+				<div class="cover --pointer" @click.stop="toggleDetails($event)">
 					<SquareImage class="cover-image" :imgSrc="'covers/' + track.cover"/>
-					<div   class="details">
-						<a target="_blank" class="album-link" v-for="link in getLinks(track)" :href="track[link]">
-														<img :src="getSrc(link)"
+					<div class="details">
+						<a target="_blank" class="album-link --pointer" v-for="link in getLinks(track)" :href="track[link]">
+														<img class="--pointer" :src="getSrc(link)"
 																						  :alt="link">
 						</a>
 					</div>
@@ -42,13 +41,13 @@ export default {
 		getSrc(link) {
 			return 'media/' + link.replace('link', '').toLowerCase() + '.svg';
 		},
-		showDetails(event) {
+		toggleDetails(event) {
 			let element = event.target;
-			element.classList.add("cover--opened");
-		},
-		hideDetails(event) {
-			let element = event.target;
-			element.classList.remove("cover--opened");
+			if (element.classList.contains("cover--opened")) {
+				element.classList.remove("cover--opened");
+			} else {
+				element.classList.add("cover--opened");
+			}
 		},
 		sortTracks() {
 			this.tracks.sort( (a, b) => {
@@ -107,14 +106,14 @@ div.details {
 	right: -5px;
 	width: 38.2%;
 	height: 100%;
-	z-index: 100;
+	z-index: 10; /*Must be less than 100 so it doesnt cover the menu */
 	background: white;
 	mix-blend-mode: difference;
 }
 
 .details img {
 	mix-blend-mode: difference;
-	max-width: 30%;
+	max-width: 23%;
 }
 
 .details a {
@@ -131,8 +130,8 @@ div.details {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 1rem;
-	animation: move 0.15s ease-in-out;
+	gap: 2rem;
+	animation: move 0.1s ease-in;
 }
 
 
