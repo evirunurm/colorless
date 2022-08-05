@@ -37,5 +37,12 @@
         "linkSpotify": "https://open.spotify.com/track/06w26XqkVXZHZh83Bfmkw7?si=d8cc4d667c5b4bcb",
         "linkApplemusic": "https://music.apple.com/es/album/paradise-lost/1633368493?i=1633368494",
         "linkAudius": ""
+    }, {
+        "name": "Pain & Truth",
+        "cover": "PAINTRUTH_THUMBNAIL_1400X1400_V2.png",
+        "release": "2022/07/31",
+        "linkYoutube": "https://www.youtube.com/watch?v=uYNckLc7eeo",
+        "linkSpotify": "https://open.spotify.com/track/0ruGqbwcESkPXV5YaoYVML?si=8c411b6c8fd9499b",
+        "linkApplemusic": "https://music.apple.com/us/album/pain-truth-single/1637335536",
     }]
 }
