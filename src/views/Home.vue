@@ -7,7 +7,7 @@
 				<p class="text">
 					{{ latest.name }}
 				</p>
-				<p class="text">
+<!--				<p class="text">
 					Sometimes you fuck up, and you fall out of paradise, if you were ever there to begin with. <br/>
 					<br/>
 					Paradise Lost is out <a href="https://linktr.ee/ColorlessBass">everywhere</a><br/>
@@ -19,6 +19,8 @@
 					My soul took the blame as I crossed.<br/>
 					The sky is black at most.<br/>
 				</p>
+				-->
+
 			</div>
 		</article>
 	</section>
