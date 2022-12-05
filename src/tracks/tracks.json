@@ -73,5 +73,15 @@
             "linkApplemusic": "https://music.apple.com/us/album/lotus-single/1651322976",
             "linkAudius": ""
         }
+        {
+            "name": "AWAKE",
+            "cover": "AWAKE_THUMBNAIL_CUBIC.png",
+            "release": "12/5/2022",
+            "linkYoutube": "https://youtu.be/yC-bIAfO-B8",
+            "linkSpotify": "https://open.spotify.com/track/0fxHnCmPsI6afBgJ9APVFS?si=ab32bb8a091d4cdf",
+            "linkItunes": "",
+            "linkApplemusic": "https://music.apple.com/us/album/awake-single/1657912066",
+            "linkAudius": ""
+        }
     ]
 }
