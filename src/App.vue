@@ -33,12 +33,8 @@ export default {
 		},
 		setCursorFollower(event) {
 			let element = event.target;
-
 			let width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-			let cursorY = parseInt(this.$refs.cursorFollower.style.top.replace("px", ""));
-
-			this.$refs.cursorFollower.style.top = `${(event.path[1].pageYOffset * 2) - cursorY}px`;
-
+			
 			if (width > 900) {
 				this.$refs.cursorFollower.style.left = `${event.pageX}px`;
 				this.$refs.cursorFollower.style.top = `${event.pageY}px`;
