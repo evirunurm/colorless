@@ -82,6 +82,16 @@
             "linkItunes": "",
             "linkApplemusic": "https://music.apple.com/us/album/awake-single/1657912066",
             "linkAudius": ""
+        },
+		{
+            "name": "OXYGEN",
+            "cover": "360P_OXYGEN_THUMBNAIL.png",
+            "release": "10/3/2023",
+            "linkYoutube": "https://www.youtube.com/watch?v=w4i44UGpeWg",
+            "linkSpotify": "https://open.spotify.com/track/1W3niPAW24M6hBjx7I9jAV?si=2edb5f9278d04145",
+            "linkItunes": "",
+            "linkApplemusic": "https://music.apple.com/us/album/oxygen/1675717851?i=1675717852",
+            "linkAudius": ""
         }
     ]
 }
